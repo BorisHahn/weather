@@ -67,4 +67,9 @@ function weatherBlock(data) {
 
 loadWeather(server);
 
+setTimeout(async function updateWeather() {
+  await loadWeather(server);
+  setTimeout(updateWeather, 1800000);
+}, 1800000);
+
 
