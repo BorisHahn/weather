@@ -41,20 +41,24 @@ function weatherBlock(data) {
   weather__temp.innerHTML = temp + `&deg;`;
   weather__feelsLike.innerHTML = `Feels like: ` + feelsLike + `&deg;`;
   weatherIconImage.src = weatherIconId;
-  
-  if (weatherCode == 1180 || 1183 || 1186 || 1189 || 1192 || 1195 || 1198|| 1201) {
+  const rainyCodeList = [1180, 1183, 1186, 1189, 1192, 1195, 1198, 1201, 1240];
+  const cloudCodeList = [1003, 1006];
+  const thunderCodeList = [1273, 1276, 1279, 1282];
+  const drizzieCodeList = [1150, 1153, 1169, 1171];
+  const cnowfallCodeList = [1210, 1213, 1216, 1219, 1222, 1225];
+  if (rainyCodeList.includes(weatherCode)) {
     wrapper.style.backgroundImage = "url('https://acegif.com/wp-content/uploads/rainy-10.gif')"
   }
-  if  (weatherCode == 1003 || 1006) {
+  if  (cloudCodeList.includes(weatherCode)) {
     wrapper.style.backgroundImage = "url('https://q-in.ru/wp-content/uploads/2020/01/oblaka.gif')";
   }
-  if (weatherCode == 1273 || 1276 || 1279 || 1282) {
+  if (thunderCodeList.includes(weatherCode)) {
     wrapper.style.backgroundImage = "url('https://i.gifer.com/76zx.gif')";
   }
-  if (weatherCode == 1150 || 1153 || 1169 || 1171) {
+  if (drizzieCodeList.includes(weatherCode)) {
     wrapper.style.backgroundImage = "url('https://i.gifer.com/7sd1.gif')";
   }
-  if (weatherCode == 1210 || 1213 || 1216 || 1219 || 1222 || 1225) {
+  if (cnowfallCodeList.includes(weatherCode)) {
     wrapper.style.backgroundImage = "url('https://i.gifer.com/embedded/download/5yo.gif')";
   }
   if (weatherCode == 1000) {

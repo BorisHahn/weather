@@ -71,6 +71,7 @@ body {
   margin-top: 50px;
   width: 300px;
   user-select: none;
+  outline: none;
   font-family: "Tahoma";
   font-size: 24px;
   border: none;
